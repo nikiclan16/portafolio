@@ -50,7 +50,7 @@ body {
   }
 
 
-.header {
+  .header {
     background-color: rgba(0, 0, 0, 0.6);
     position: relative;
     top: 0;
@@ -61,37 +61,37 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    transition: 0.5s;
-    color:#0F0;
+    transition: color 0.5s;
+    color: #0F0;
 
-    
     border-top: #0F0 solid 1.5px;
     border-bottom: #0F0 solid 1.5px;
 }
-    
+
 .header::before {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0; /* Cambiamos "top" por "bottom" para que el fondo verde comience desde abajo */
     left: 0;
-    width: 0;
-    height: 100%;
+    width: 100%; /* Cambiamos "width: 0" por "width: 100%" para que el fondo verde cubra todo el ancho */
+    height: 0; /* Cambiamos "height: 100%" por "height: 0" para que inicialmente el fondo verde esté oculto */
     background: #0F0;
     z-index: -1;
-    transition: .5s;
+    transition: height 0.5s; /* Cambiamos la propiedad de transición para que se aplique al cambio de altura (height) */
 }
 
 .header:hover::before {
-    width: 100%;
+    height: 100%; /* Al pasar el cursor por encima del encabezado, el fondo verde se expande de abajo hacia arriba */
 }
 
 .header:hover {
     color: #000000;
 }
 
-.header:hover a{
+.header:hover a {
     color: rgb(0, 0, 0);
 }
+
 
 
 
